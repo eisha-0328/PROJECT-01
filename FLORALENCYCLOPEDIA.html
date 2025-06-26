@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0"><link rel="stylesheet" href="floralencyclopedia.html">
+    <link rel="stylesheet" href="floralblog.html">
+    <link rel="stylesheet" href="MEDICINE.html">
+    <link rel="stylesheet" href="about.html">
+    <link rel="stylesheet" href="index.html">
+    <title>PETALPEDIA</title>
+</head>
+<style>   
+ body {
+    font-family: 'Georgia', serif;
+    margin:0px; 
+    padding: 0;
+    line-height: 1.6;
+    word-spacing: 1.5px;
+    background-color:#ecbc9f;
+
+}
+
+
+header {
+    background: linear-gradient(to right, rgb(255, 126, 233), rgb(255, 193, 245), rgb(255, 173, 234), rgb(255, 104, 255));
+    color: #592c58;
+    text-align: center;
+    border-bottom: 5px solid #e69da7;
+    font-style: italic;
+    padding: 1px 0; /* Added padding for space inside the header */
+}
+
+header h1 {color: #9b2d6d;
+    font-size: 6em;
+    font-family: 'Colonna MT';
+    font-weight: bolder;
+    text-decoration: double;
+    text-decoration-line: underline;
+    margin: 0; /* Removed default margins */
+    text-shadow:
+        2px 4px 0px rgba(12, 6, 11, 0.8), /* Top-left shadow */
+        2px 4px 0px rgba(12, 6, 11, 0.8),  /* Top-right shadow */
+        2px 2px 0px rgba(12, 6, 11, 0.8),  /* Bottom-left shadow */
+        2px 2px 0px rgba(12, 6, 11, 0.8);  /* Bottom-right shadow */
+
+}
+
+
+header h2 {
+    font-size: 1.9em;
+    font-style: italic;
+    font-family: 'Colonna MT';
+    font-weight: bolder;
+    text-decoration: dotted;
+    text-decoration-line: underline;
+    margin:0; 
+}
+
+nav {
+    background-color: rgb(70, 16, 65);
+    position: sticky;
+    top: 0;
+    margin:0; 
+    padding: 10px 20px;border:5px groove 
+    rgb(207, 194, 77); 
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 5px 5px 7px rgb(136, 11, 130);
+    
+}
+
+nav a {font-family:Jokerman;
+    margin: 5px 10px;
+    padding: 8px 15px;
+    color: #e4bbe0;
+    text-decoration: double;
+    text-decoration-line: underline;
+    font-weight: bold;
+    font-size: 1.3em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    
+}
+
+    nav a:hover {
+        color: #fff;
+        background-color: #aa2a55;
+        border-radius: 10px;
+        border-radius: 10px;
+        font-weight: bolder;
+        transform: scale(1.10);
+        border: 3px inset rgb(2, 0, 0);height: fit-content; 
+    }
+
+    nav a:visited {
+        color: #d668c8;
+        font-weight: bolder !important;
+        border-radius: 10px;
+        font-weight: bolder;
+        transform: scale(1.09);
+    }
+
+    nav a:visited:hover {
+        color: #fff;
+        border-radius: 10px;
+        font-weight: bolder;
+        transform: scale(1.09);
+    }
+
+    .subheading {
+        text-align: center;
+        padding: 50px 20px;
+        background: linear-gradient(to bottom,#D2665A, #ecbc9f);
+    }
+
+    .subheading h1 {
+        font-size: 3.5em;
+        color: #872341;
+    }
+
+    .subheading p {
+        font-size: 1.2em;
+        color: #872341;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 50px 20px;
+    }
+
+    .container {
+        display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+
+    .item {
+        border: 8px inset #B82132;
+        border-radius: 15px;
+        overflow: hidden;
+        background-color: #ffe6ee;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        text-align: center;
+    }
+
+    .item:hover {
+        transform: scale(1.09);
+    }
+
+    .item img {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+    border-bottom:4px ridge #350e29;
+    }
+
+    .item h3 {
+        font-size: 1.5em;
+        color: #5c1340;
+        margin: 15px 0 10px;
+    }
+
+    .item p {
+        font-size: 1em;
+        color: #6a426a;
+        padding: 0 15px;
+    }
+
+    footer {
+        background-color: #f2c6d2;
+        color: #4d084b;
+        padding: 20px 10px;
+        text-align: center;
+        border-top: 5px solid #e69da7;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+
+    footer a {
+        color: #4d084b;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 5px;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    .item button {
+        background-color: #0c3094;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .item button:hover {
+        background-color: rgba(12, 48, 148, 0.8);
+        color: #bdc3c5;
+    }
+
+    .item img:hover {
+        transform: scale(1.6);
+        opacity: 0.6;
+        border-color:
+            antiquewhite;
+        border-width: 4px;
+    }
+
+    .browser {
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    }
+
+    .browser {
+        background-color: rgba(12, 48, 148, 0.8);
+        color: #bdc3c5;
+        border-radius: 20px;
+        ;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #146cca;
+    }
+     @media (max-width:992px){
+        .container{
+            grid-template-columns: repeat(2,1fr);
+        }
+         header h1 {
+            font-size: 4em;
+        }
+
+        header h2 {
+            font-size: 1.5em;
+        }
+
+        nav a {
+            font-size: 1em;
+            margin: 3px 5px;
+            padding: 5px 10px;
+        }
+
+        .subheading h1 {
+            font-size: 2.5em;
+        }
+    }
+
+    @media (max-width:768px){
+        .container{
+            grid-template-columns:1fr;
+        } header h1 {
+                font-size: 3em;
+            }
+
+            header h2 {
+                font-size: 1.5em;
+            }
+
+            nav a {
+                font-size: 1em;
+                padding: 5px 10px;
+            }
+
+            .subheading h1 {
+                font-size: 2.5em;
+            }
+    }
+    @media (max-width:488px){
+        .container{
+            grid-template-columns:1fr;
+        }   header h1 {
+                font-size: 2.5em;
+            }
+
+            header h2 {
+                font-size: 1.2em;
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            nav a {
+                font-size: 0.9em;
+                padding: 5px;
+            }
+
+            .subheading h1 {
+                font-size: 2em;
+            }
+
+    }
+</style>
+<body>
+    <header>
+        <h1>Petalpedia</h1>
+        <h2>Supporting the Global Strategy for Plant Conservation</h2>
+    </header>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="floralblog.html">FLORAL BLOG</a>
+        <a href="floralencyclopedia.html">ENCYCLOPEDIA</a>
+        <a href="medicine.html">MEDICINE</a>
+        <a href="about.html">SIGN UP</a> 
+    
+    <button class="browser" onclick="customize()">Go back feature</button>
+    <button  class="browser"onclick="pagereload()">enter for the reload</button>
+    </nav>
+
+    <section class="subheading">
+        <h1><i>FLORAL ENCYCLOPEDIA</i></h1>
+        <p>Your ultimate destination for exploring, learning, and preserving the beauty of nature. Dive into our vast
+            collection of floral knowledge and discover the hidden wonders of the plant kingdom.</p>
+    </section>
+<section>
+    <div class="container">
+        <div class="item">
+         <img src="m3.jpg" alt="1">
+            <h3>Crabapples: A Tree for All Seasons</h3>
+            <p>Discover the beauty and versatility of crabapples throughout the year.</p> <button onclick="readMore('color-theory')">Read More</button>
+        </div>
+
+        <div class="item">
+            <img src="Acalypha-3.webp" alt="2">
+            <h3>5 Tips to Create a Stunning Rose Garden</h3>
+            <p>Learn how to cultivate a beautiful rose garden in your backyard.</p> <button onclick="customized()">Read More</button>
+        </div>
+
+        <div class="item">
+           <img src="f2.jpg" alt="3">
+            <h3>The Calming Effects of Lavender</h3>
+            <p>Discover how lavender can reduce stress and enhance relaxation.</p> <button onclick="readMore('color-theory')">Read More</button>
+        </div>
+
+        <div class="item">
+          <img src="IMG_20211114_021627.webp" alt="4">
+            <h3>Garden Design Essentials</h3>
+            <p>Top design tips to make your garden stand out this season.</p> <button onclick="readMore('color-theory')">Read More</button>
+        </div>
+        <div class="item">
+            <img src="e2.webp" alt="5">
+            <h3>Garden Design Essentials</h3>
+            <p>Top design tips to make your garden stand out this season.</p> <button onclick="readMore('color-theory')">Read More</button>
+        </div>
+        <div class="item">
+            <img src="alexendra-palm.webp" alt="6">
+            <h3>Garden Design Essentials</h3>
+            <p>Top design tips to make your garden stand out this season.</p> <button onclick="readMore('color-theory')">Read More</button>
+        </div>
+        <div class="item">
+            <img src="Alyssum-paneeri-2.webp" alt="7">
+            <h3>Garden Design Essentials</h3>
+            <p>Top design tips to make your garden stand out this season.</p> <button onclick="readMore('color-theory')">Read More</button>
+        </div>
+        <div class="item">
+            <img src="Almond-tree1-Buy-Plants-Online-Plant.Pk_.webp" alt="">
+            <h3>Garden Design Essentials</h3>
+            <p>Top design tips to make your garden stand out this season.</p> <button onclick="readMore('color-theory')">Read More</button>
+        </div>
+        <div class="item">
+            <img src="amaltas-outdoor-Buy-Plants-Online-Plant.Pk_.webp" alt="x">
+            <h3>Garden Design Essentials</h3>
+            <p>Top design tips to make your garden stand out this season.</p> <button onclick="readMore('color-theory')">Read More</button>
+        </div>
+        <div class="item">
+            <img src="Lstonia..price-150.webp" alt="dd"> <h3>Garden Design Essentials</h3>
+            <p>Top design tips to make your garden stand out this season.</p> <button onclick="readMore('color-theory')">Read More</button>
+        </div>
+    </div>
+</section>
+    <footer>
+        <p> ;Email: floralencyclopedia@example.com</p>
+        <p>Follow us on:
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a><sup>&copy;</sup>
+        </p>
+    </footer>
+    <script>
+        function buildin() {
+            window.alert("type an alert message here");
+        }
+        function customize() {
+            window.history.back();
+        }
+        function pagereload() {
+            window.location.reload();
+        }
+        function customized() {
+            window.open("https://www.youtube.com/")
+        }
+        function URL() {
+            window("current URL:" + window.location.href);
+        }</script>
+</body>
+</html>

@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petalpedia Seller Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0px;
+            padding: 0;
+            line-height: 1.6;
+            word-spacing: 1.5px;
+            background-color: #b95f6b;
+
+        }
+
+
+        header {
+            background: linear-gradient(to right, rgb(255, 126, 233), rgb(255, 193, 245), rgb(255, 173, 234), rgb(255, 104, 255));
+            color: #592c58;
+            text-align: center;
+            border-bottom: 5px solid #e69da7;
+            font-style: italic;
+            padding: 1px 0;
+            /* Added padding for space inside the header */
+        }
+
+        header h1 {
+            color: #9b2d6d;
+            font-size: 6em;
+            font-family: 'Colonna MT';
+            font-weight: bolder;
+            text-decoration: double;
+            text-decoration-line: underline;
+            margin: 0;
+            /* Removed default margins */
+            text-shadow:
+                2px 4px 0px rgba(12, 6, 11, 0.8),
+                /* Top-left shadow */
+                2px 4px 0px rgba(12, 6, 11, 0.8),
+                /* Top-right shadow */
+                2px 2px 0px rgba(12, 6, 11, 0.8),
+                /* Bottom-left shadow */
+                2px 2px 0px rgba(12, 6, 11, 0.8);
+            /* Bottom-right shadow */
+
+        }
+
+
+        header h2 {
+            font-size: 1.9em;
+            font-style: italic;
+            font-family: 'Colonna MT';
+            font-weight: bolder;
+            text-decoration: dotted;
+            text-decoration-line: underline;
+            margin: 0;
+        }
+
+        nav {
+            background-color: rgb(70, 16, 65);
+            position: sticky;
+            top: 0;
+            margin: 0;
+            padding: 10px 20px;
+            border: 5px groove rgb(207, 194, 77);
+            text-align: center;
+            z-index: 1000;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            box-shadow: 5px 5px 7px rgb(136, 11, 130);
+
+        }
+
+        nav a {
+            font-family: Jokerman;
+            margin: 5px 10px;
+            padding: 8px 15px;
+            color: #e4bbe0;
+            text-decoration: double;
+            text-decoration-line: underline;
+            font-weight: bold;
+            font-size: 1.3em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+        }
+
+        nav a:hover {
+            color: #fff;
+            background-color: #aa2a55;
+            border-radius: 10px;
+            border-radius: 10px;
+            font-weight: bolder;
+            transform: scale(1.10);
+            border: 3px inset rgb(2, 0, 0);
+            height: fit-content;
+        }
+
+        nav a:visited {
+            color: #d668c8;
+            font-weight: bolder !important;
+            border-radius: 10px;
+            font-weight: bolder;
+            transform: scale(1.09);
+        }
+
+        nav a:visited:hover {
+            color: #fff;
+            border-radius: 10px;
+            font-weight: bolder;
+            transform: scale(1.09);
+        }
+
+        .subheading {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to bottom, #872341, #b95f6b);
+        }
+
+        .subheading h1 {
+            font-size: 3.5em;
+            color: #e0a299;
+        }
+
+        .subheading p {
+            font-size: 1.2em;
+            color: #e0a299;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 50px 20px;
+        }
+
+        footer {
+            background-color: #f2c6d2;
+            color: #4d084b;
+            padding: 20px 10px;
+            text-align: center;
+            border-top: 5px solid #e69da7;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #4d084b;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .browser {
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                color: white;
+                background-color: #007BFF;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+        }
+
+        .browser {
+            background-color: rgba(12, 48, 148, 0.8);
+            color: #bdc3c5;
+            border-radius: 20px;
+            ;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #146cca;
+        }
+
+        /*         
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        } */
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        header h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin: 0.5rem 0 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgb(146, 4, 4);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(158, 5, 5, 0.433);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-option input {
+            margin-right: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+
+
+        /* .radio-option {
+            display: flex;
+            align-items: center;
+        }
+         */
+        /* .radio-option input {
+            margin-right: 0.5rem;
+        } */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .btn:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .payment-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .payment-card:hover {
+            border-color: var(--primary);
+        }
+
+        .payment-card.selected {
+            border: 2px solid var(--primary);
+            background-color: rgba(74, 143, 41, 0.05);
+        }
+
+        .payment-card i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .payment-card.selected {
+            border: 2px solid rgba(116, 22, 105, 0.737);
+            background-color: #f0fff0;
+        }
+
+        .form-control.error {
+            border-color: #dc3545;
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: rgb(116, 22, 105);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header h2 {
+                font-size: 1.2rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .subheading {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to bottom, #da8e96, #f3c7ec);
+        }
+
+        .subheading h1 {
+            font-size: 3.5em;
+            color: #7a316f;
+        }
+
+        .container {
+            background-color: rgb(114, 161, 199);
+            border: 6px groove rgb(8, 60, 102);
+            border-radius: 50px;
+            margin: 3px auto;
+            padding: 2px auto;
+            max-width: 900px;
+            align-items: center;
+            align-content: center;
+        }
+
+        .item {
+            background-color: antiquewhite;
+            border: 3px double rgba(91, 6, 74, 0.714);
+            border-radius: 100px;
+            word-spacing: 2.5;
+            text-align: center;
+            height: 40px;
+            font-size: 16px;
+            margin: 3px;
+            padding: 2px auto;
+            font-weight: bold;
+            color: rgb(5, 32, 54);
+            font-family: Bookman Old Style;
+            align-items: center;
+            align-content: center;
+            cursor: pointer;
+        }
+
+        fieldset {
+            border: 1px ridge rgb(114, 161, 199);
+            border-radius: 50px;
+        }
+
+        fieldset button {
+            background-color: #7a316f;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 17px;
+
+        }
+
+        fieldset button:hover {
+            background-color: #591d52;
+        }
+
+        .browser {
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                color: white;
+                background-color: #007BFF;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+        }
+
+        .browser {
+            background-color: rgba(12, 48, 148, 0.8);
+            color: #bdc3c5;
+            border-radius: 20px;
+            ;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #146cca;
+        }
+
+        input::placeholder {
+            color: #000000;
+            font-size: 12px;
+
+            opacity: 0.6;
+            font-family: Bookman Old Style;
+        }
+
+        @media (max-width:992px) {
+            header h1 {
+                font-size: 4em;
+            }
+
+            header h2 {
+                font-size: 1.5em;
+            }
+
+            nav a {
+                font-size: 1em;
+                margin: 3px 5px;
+                padding: 5px 10px;
+            }
+
+            .subheading h1 {
+                font-size: 2.5em;
+            }
+
+            .container {
+                max-width: 90%;
+            }
+
+            .item {
+                font-size: 14px;
+                height: auto;
+                padding: 5px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3em;
+            }
+
+            header h2 {
+                font-size: 1.5em;
+            }
+
+            nav a {
+                font-size: 1em;
+                padding: 5px 10px;
+            }
+
+            .subheading h1 {
+                font-size: 2.5em;
+            }
+
+            .container {
+                padding: 10px;
+                max-width: 90%;
+            }
+
+            .item {
+                font-size: 14px;
+            }
+
+            fieldset button {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header h2 {
+                font-size: 1.2em;
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            nav a {
+                font-size: 0.9em;
+                padding: 5px;
+            }
+
+            .subheading h1 {
+                font-size: 2em;
+            }
+
+            .container {
+                padding: 5px;
+            }
+
+            .item {
+                font-size: 12px;
+                padding: 5px;
+            }
+
+            fieldset button {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f3c7ec;
+            font-size: 18px;
+        }
+
+        header {
+            background: linear-gradient(to right, rgb(255, 126, 233), rgb(255, 193, 245), rgb(255, 173, 234), rgb(255, 104, 255));
+            color: #592c58;
+            text-align: center;
+            border-bottom: 5px solid #e69da7;
+            padding: 10px 0;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-family: 'Colonna MT';
+            font-weight: bold;
+            color: #9b2d6d;
+            text-decoration: underline;
+        }
+
+        header h2 {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #7a316f;
+        }
+
+        nav {
+            background-color: rgb(70, 16, 65);
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            font-family: Jokerman;
+            margin: 0 10px;
+            padding: 8px 15px;
+            color: #e4bbe0;
+            text-decoration: underline;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            color: white;
+            background-color: #aa2a55;
+            border-radius: 10px;
+        }
+
+        .form-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 1200px;
+            border-radius: 20px;
+            box-shadow: 0 2px 15px rgba(129, 5, 5, 0.65);
+        }
+
+        .column {
+            flex: 1;
+            min-width: 300px;
+            margin: 10px;
+        }
+
+        .column h3 {
+            color: #4d084b;
+            border-bottom: 2px solid #e69da7;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .payment-card {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .payment-card:hover,
+        .payment-card.selected {
+            border-color: #880c0cb9;
+            background-color: #f7e2ee;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .form-submit button {
+            background-color: #7a316f;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .form-submit button:hover {
+            background-color: #591d52;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Petalpedia</h1>
+        <h2>Supporting the Global Strategy for Plant Conservation</h2>
+    </header>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="FLORALBLOG.html">FLORAL BLOG</a>
+        <a href="FLORALENCYCLOPEDIA.html">ENCYCLOPEDIA</a>
+        <a href="MEDICINE.html">MEDICINE</a>
+        <a href="about.html">SIGN UP</a>
+    </nav>
+    <form id="registrationForm">
+        <section class="form-section">
+            <div class="column">
+                <h3>Personal Information</h3>
+                <div class="form-group">
+                    <label for="firstName" id="firstName">First Name*</label>
+                    <input type="text" id="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName" id="lastName">Last Name*</label>
+                    <input type="text" id="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" id="email">Email Address*</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" id="phone">Phone Number*</label>
+                    <input type="tel" id="phone" required>
+                </div>
+            </div>
+
+            <div class="column">
+                <h3>Business Information</h3>
+                <div class="form-group">
+                    <label for="businessName" id="businessName">Business Name*</label>
+                    <input type="text" id="businessName" required>
+                </div>
+                <div class="form-group">
+                    <label for="businessType" id="businessType">Business Type*</label>
+                    <select id="businessType" required>
+                        <option value="">Select business type</option>
+                        <option value="nursery">Plant Nursery</option>
+                        <option value="florist">Florist</option>
+                        <option value="gardener">Professional Gardener</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="taxId" id="taxId">Tax ID/VAT Number</label>
+                    <input type="text" id="taxId">
+                    <small>Required for international payments</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <div class="column" style="flex: 1 1 100%;">
+                <h3>Payment Information</h3>
+                <div class="payment-methods">
+                    <div class="payment-card" id="paypal" onclick="selectPayment('paypal',event)">
+                        <i class="fab fa-cc-paypal"></i>
+                        <div>PayPal</div>
+                        <small>Global payments</small>
+                    </div>
+                    <div class="payment-card" id="stripe" onclick="selectPayment('stripe',event)">
+                        <i class="fab fa-cc-stripe"></i>
+                        <div>Credit Card</div>
+                        <small>Visa, Mastercard, etc.</small>
+                    </div>
+                    <div class="payment-card" id="bank" onclick="selectPayment('bank',event)">
+                        <i class="fas fa-university"></i>
+                        <div>Bank Transfer</div>
+                        <small>International wire</small>
+                    </div>
+                    <input type="hidden" id="paymentMethod" required>
+                    <div class="error-message" id="paymentMethodError">Please select a payment method</div>
+                </div>
+                <div id="paypalDetails" style="display: none;">
+                    <div class="form-group">
+                        <label for="paypalEmail">PayPal Email*</label>
+                        <input type="email" id="paypalEmail" class="form-control">
+                        <div class="error-message" id="paypalEmailError">Please enter your PayPal email</div>
+                    </div>
+                </div>
+                <div id="cardDetails" style="display: none;">
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number*</label>
+                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                        <div class="error-message" id="cardNumberError">Please enter a valid card number</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiryDate">Expiry Date*</label>
+                        <input type="text" id="expiryDate" placeholder="MM/YY" required>
+                        <div class="error-message" id="expiryDateError">Please enter a valid expiry date</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV*</label>
+                        <input type="text" id="cvv" placeholder="123" required>
+                    </div>
+                    <div id="paypalDetails" style="display: none;">
+                        <label for="paypalEmail" id="paypalEmail">PayPal Email*</label>
+                        <input type="email" id="paypalEmail" placeholder="paypal@example.com" required>
+                    </div>
+                    <div id="cardDetails" style="display: none;">
+                        <label for="cardNumber" id="cardNumber">Card Number*</label>
+                    </div>
+                    <!-- Terms and Submit -->
+                    <div style="margin-top: 2rem;">
+                        <div class="form-group">
+                            <div class="radio-option">
+                                <input type="checkbox" id="terms" required>
+                                <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>*</label>
+                            </div>
+                            <div class="error-message" id="termsError">You must agree to the terms</div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-block" style="margin-top: 1rem;">
+                            <i class="fas fa-leaf"></i> Complete Registration
+                        </button>
+                    </div>
+                    <div id="successMessage" style="display: none;">Registration successful!</div>
+                </div>
+            </div>
+        </section>
+    </form>
+    <div class="form-submit">
+        <button type="submit"><i class="fas fa-leaf"></i> Complete Registration</button>
+        <script>
+            // JSON Data Storage and Management
+            class RegistrationDataManager {
+                constructor() {
+                    this.storageKey = 'petalpedia_registrations';
+                    this.currentRegistration = null;
+                }
+
+                // Save registration data as JSON
+                saveRegistration(formData) {
+                    try {
+                        // Get existing registrations
+                        let registrations = this.getAllRegistrations();
+                        
+                        // Create new registration object with timestamp
+                        const newRegistration = {
+                            id: this.generateId(),
+                            timestamp: new Date().toISOString(),
+                            status: 'pending',
+                            ...formData
+                        };
+
+                        // Add to existing registrations
+                        registrations.push(newRegistration);
+
+                        // Save to localStorage as JSON
+                        localStorage.setItem(this.storageKey, JSON.stringify(registrations));
+                        
+                        // Set current registration
+                        this.currentRegistration = newRegistration;
+                        
+                        console.log('Registration saved:', newRegistration);
+                        return newRegistration;
+                    } catch (error) {
+                        console.error('Error saving registration:', error);
+                        throw error;
+                    }
+                }
+
+                // Get all registrations from JSON storage
+                getAllRegistrations() {
+                    try {
+                        const data = localStorage.getItem(this.storageKey);
+                        return data ? JSON.parse(data) : [];
+                    } catch (error) {
+                        console.error('Error reading registrations:', error);
+                        return [];
+                    }
+                }
+
+                // Get registration by ID
+                getRegistrationById(id) {
+                    const registrations = this.getAllRegistrations();
+                    return registrations.find(reg => reg.id === id);
+                }
+
+                // Update registration status
+                updateRegistrationStatus(id, status) {
+                    try {
+                        let registrations = this.getAllRegistrations();
+                        const index = registrations.findIndex(reg => reg.id === id);
+                        
+                        if (index !== -1) {
+                            registrations[index].status = status;
+                            registrations[index].updatedAt = new Date().toISOString();
+                            localStorage.setItem(this.storageKey, JSON.stringify(registrations));
+                            return true;
+                        }
+                        return false;
+                    } catch (error) {
+                        console.error('Error updating registration:', error);
+                        return false;
+                    }
+                }
+
+                // Delete registration
+                deleteRegistration(id) {
+                    try {
+                        let registrations = this.getAllRegistrations();
+                        registrations = registrations.filter(reg => reg.id !== id);
+                        localStorage.setItem(this.storageKey, JSON.stringify(registrations));
+                        return true;
+                    } catch (error) {
+                        console.error('Error deleting registration:', error);
+                        return false;
+                    }
+                }
+
+                // Export registrations as JSON file
+                exportRegistrations() {
+                    try {
+                        const registrations = this.getAllRegistrations();
+                        const dataStr = JSON.stringify(registrations, null, 2);
+                        const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                        
+                        const link = document.createElement('a');
+                        link.href = URL.createObjectURL(dataBlob);
+                        link.download = `petalpedia_registrations_${new Date().toISOString().split('T')[0]}.json`;
+                        link.click();
+                    } catch (error) {
+                        console.error('Error exporting registrations:', error);
+                    }
+                }
+
+                // Import registrations from JSON file
+                importRegistrations(file) {
+                    return new Promise((resolve, reject) => {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            try {
+                                const importedData = JSON.parse(e.target.result);
+                                if (Array.isArray(importedData)) {
+                                    // Merge with existing data
+                                    const existingData = this.getAllRegistrations();
+                                    const mergedData = [...existingData, ...importedData];
+                                    localStorage.setItem(this.storageKey, JSON.stringify(mergedData));
+                                    resolve(mergedData);
+                                } else {
+                                    reject(new Error('Invalid JSON format'));
+                                }
+                            } catch (error) {
+                                reject(error);
+                            }
+                        };
+                        reader.readAsText(file);
+                    });
+                }
+
+                // Generate unique ID
+                generateId() {
+                    return Date.now().toString(36) + Math.random().toString(36).substr(2);
+                }
+
+                // Get registration statistics
+                getStatistics() {
+                    const registrations = this.getAllRegistrations();
+                    return {
+                        total: registrations.length,
+                        pending: registrations.filter(reg => reg.status === 'pending').length,
+                        approved: registrations.filter(reg => reg.status === 'approved').length,
+                        rejected: registrations.filter(reg => reg.status === 'rejected').length,
+                        byBusinessType: registrations.reduce((acc, reg) => {
+                            acc[reg.businessInfo.type] = (acc[reg.businessInfo.type] || 0) + 1;
+                            return acc;
+                        }, {}),
+                        byPaymentMethod: registrations.reduce((acc, reg) => {
+                            acc[reg.paymentInfo.method] = (acc[reg.paymentInfo.method] || 0) + 1;
+                            return acc;
+                        }, {})
+                    };
+                }
+            }
+
+            // Initialize data manager
+            const dataManager = new RegistrationDataManager();
+
+            // Payment Method Selection
+            let selectedPaymentMethod = null;
+
+            function selectPayment(method, event) {
+                selectedPaymentMethod = method;
+                document.getElementById('paymentMethod').value = method;
+
+                // Reset all payment cards
+                document.querySelectorAll('.payment-card').forEach(card => {
+                    card.classList.remove('selected');
+                });
+
+                // Highlight selected card
+                event.currentTarget.classList.add('selected');
+
+                // Hide all payment detail sections
+                document.getElementById('paypalDetails').style.display = 'none';
+                document.getElementById('cardDetails').style.display = 'none';
+                document.getElementById('bankDetails').style.display = 'none';
+
+                // Show relevant payment details
+                if (method === 'paypal') {
+                    document.getElementById('paypalDetails').style.display = 'block';
+                } else if (method === 'stripe') {
+                    document.getElementById('cardDetails').style.display = 'block';
+                } else if (method === 'bank') {
+                    document.getElementById('bankDetails').style.display = 'block';
+                }
+            }
+
+            // Form Validation with JSON data handling
+            document.getElementById('registrationForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                let isValid = true;
+
+                // Reset error states
+                document.querySelectorAll('.error-message').forEach(el => {
+                    el.style.display = 'none';
+                });
+                document.querySelectorAll('.form-control').forEach(el => {
+                    el.classList.remove('error');
+                });
+
+                // Validate required fields
+                const requiredFields = [
+                    'firstName', 'lastName', 'email', 'phone',
+                    'businessName', 'businessType', 'paymentMethod'
+                ];
+
+                requiredFields.forEach(fieldId => {
+                    const field = document.getElementById(fieldId);
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.classList.add('error');
+                        const errorElement = document.getElementById(`${fieldId}Error`);
+                        if (errorElement) {
+                            errorElement.style.display = 'block';
+                        }
+                    }
+                });
+
+                // Validate email format
+                const email = document.getElementById('email');
+                if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                    isValid = false;
+                    email.classList.add('error');
+                    const emailError = document.getElementById('emailError');
+                    if (emailError) {
+                        emailError.textContent = 'Please enter a valid email address';
+                        emailError.style.display = 'block';
+                    }
+                }
+
+                // Validate phone number (basic international validation)
+                const phone = document.getElementById('phone');
+                if (phone.value && !/^[\d\s\+\(\)-]{10,20}$/.test(phone.value)) {
+                    isValid = false;
+                    phone.classList.add('error');
+                    const phoneError = document.getElementById('phoneError');
+                    if (phoneError) {
+                        phoneError.textContent = 'Please enter a valid phone number';
+                        phoneError.style.display = 'block';
+                    }
+                }
+
+                // Validate payment method specific fields
+                if (selectedPaymentMethod === 'paypal') {
+                    const paypalEmail = document.getElementById('paypalEmail');
+                    if (!paypalEmail.value.trim()) {
+                        isValid = false;
+                        paypalEmail.classList.add('error');
+                        document.getElementById('paypalEmailError').style.display = 'block';
+                    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(paypalEmail.value)) {
+                        isValid = false;
+                        paypalEmail.classList.add('error');
+                        document.getElementById('paypalEmailError').textContent = 'Please enter a valid PayPal email';
+                        document.getElementById('paypalEmailError').style.display = 'block';
+                    }
+                } else if (selectedPaymentMethod === 'stripe') {
+                    const cardFields = ['cardNumber', 'expiryDate', 'cvv'];
+                    cardFields.forEach(fieldId => {
+                        const field = document.getElementById(fieldId);
+                        if (!field.value.trim()) {
+                            isValid = false;
+                            field.classList.add('error');
+                            const errorElement = document.getElementById(`${fieldId}Error`);
+                            if (errorElement) {
+                                errorElement.style.display = 'block';
+                            }
+                        }
+                    });
+
+                    // Basic card number validation (Luhn algorithm would be better)
+                    const cardNumber = document.getElementById('cardNumber');
+                    if (cardNumber.value && !/^\d{12,19}$/.test(cardNumber.value.replace(/\s/g, ''))) {
+                        isValid = false;
+                        cardNumber.classList.add('error');
+                        document.getElementById('cardNumberError').textContent = 'Please enter a valid card number';
+                        document.getElementById('cardNumberError').style.display = 'block';
+                    }
+
+                    // Basic expiry date validation
+                    const expiryDate = document.getElementById('expiryDate');
+                    if (expiryDate.value && !/^(0[1-9]|1[0-2])\/?([0-9]{2})$/.test(expiryDate.value)) {
+                        isValid = false;
+                        expiryDate.classList.add('error');
+                        document.getElementById('expiryDateError').textContent = 'Please enter a valid expiry date (MM/YY)';
+                        document.getElementById('expiryDateError').style.display = 'block';
+                    }
+
+                    // Basic CVV validation
+                    const cvv = document.getElementById('cvv');
+                    if (cvv.value && !/^\d{3,4}$/.test(cvv.value)) {
+                        isValid = false;
+                        cvv.classList.add('error');
+                        const cvvError = document.getElementById('cvvError');
+                        if (cvvError) {
+                            cvvError.textContent = 'Please enter a valid CVV (3-4 digits)';
+                            cvvError.style.display = 'block';
+                        }
+                    }
+                } else if (selectedPaymentMethod === 'bank') {
+                    const bankFields = ['accountName', 'accountNumber', 'swiftCode'];
+                    bankFields.forEach(fieldId => {
+                        const field = document.getElementById(fieldId);
+                        if (!field.value.trim()) {
+                            isValid = false;
+                            field.classList.add('error');
+                            document.getElementById(`${fieldId}Error`).style.display = 'block';
+                        }
+                    });
+                }
+
+                // Validate terms checkbox
+                if (!document.getElementById('terms').checked) {
+                    isValid = false;
+                    document.getElementById('termsError').style.display = 'block';
+                }
+
+                // If form is valid, save data as JSON and show success message
+                if (isValid) {
+                    try {
+                        // Prepare form data for JSON storage
+                        const formData = {
+                            personalInfo: {
+                                firstName: document.getElementById('firstName').value.trim(),
+                                lastName: document.getElementById('lastName').value.trim(),
+                                email: document.getElementById('email').value.trim(),
+                                phone: document.getElementById('phone').value.trim()
+                            },
+                            businessInfo: {
+                                name: document.getElementById('businessName').value.trim(),
+                                type: document.getElementById('businessType').value,
+                                taxId: document.getElementById('taxId').value.trim()
+                            },
+                            paymentInfo: {
+                                method: selectedPaymentMethod,
+                                details: getPaymentDetails()
+                            }
+                        };
+
+                        // Save to JSON storage
+                        const savedRegistration = dataManager.saveRegistration(formData);
+                        
+                        // Show success message with registration ID
+                        showSuccessMessage(savedRegistration);
+                        
+                        // Log statistics
+                        const stats = dataManager.getStatistics();
+                        console.log('Registration Statistics:', stats);
+                        
+                    } catch (error) {
+                        console.error('Error saving registration:', error);
+                        alert('There was an error saving your registration. Please try again.');
+                    }
+                }
+            });
+
+            function showSuccessMessage(registration) {
+                // Hide the form
+                document.getElementById('registrationForm').style.display = 'none';
+                
+                // Create success message
+                const successDiv = document.createElement('div');
+                successDiv.className = 'success-message';
+                successDiv.style.display = 'block';
+                successDiv.innerHTML = `
+                    <h2>🎉 Registration Successful!</h2>
+                    <p><strong>Registration ID:</strong> ${registration.id}</p>
+                    <p><strong>Business Name:</strong> ${registration.businessInfo.name}</p>
+                    <p><strong>Email:</strong> ${registration.personalInfo.email}</p>
+                    <p><strong>Status:</strong> <span style="color: #ffa500;">${registration.status}</span></p>
+                    <p>Thank you for registering with Petalpedia! We will review your application and contact you soon.</p>
+                    <button onclick="window.location.reload()" style="background-color: #7a316f; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">
+                        Register Another Business
+                    </button>
+                `;
+                
+                document.body.appendChild(successDiv);
+            }
+
+            function getPaymentDetails() {
+                if (selectedPaymentMethod === 'paypal') {
+                    return { email: document.getElementById('paypalEmail').value };
+                } else if (selectedPaymentMethod === 'stripe') {
+                    return {
+                        cardNumber: document.getElementById('cardNumber').value.replace(/\s/g, ''),
+                        expiryDate: document.getElementById('expiryDate').value,
+                        cvv: document.getElementById('cvv').value
+                    };
+                } else if (selectedPaymentMethod === 'bank') {
+                    return {
+                        accountName: document.getElementById('accountName')?.value || '',
+                        accountNumber: document.getElementById('accountNumber')?.value || '',
+                        swiftCode: document.getElementById('swiftCode')?.value || ''
+                    };
+                }
+                return null;
+            }
+
+            // Format credit card number
+            document.getElementById('cardNumber').addEventListener('input', function (e) {
+                let value = e.target.value.replace(/\s+/g, '');
+                if (value.length > 0) {
+                    value = value.match(new RegExp('.{1,4}', 'g')).join(' ');
+                }
+                e.target.value = value;
+            });
+
+            // Format expiry date
+            document.getElementById('expiryDate').addEventListener('input', function (e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 2) {
+                    value = value.substring(0, 2) + '/' + value.substring(2, 4);
+                }
+                e.target.value = value;
+            });
+
+            // Add utility functions for JSON operations
+            window.petalpediaUtils = {
+                // Export all registrations
+                exportData: () => dataManager.exportRegistrations(),
+                
+                // Import registrations
+                importData: (file) => dataManager.importRegistrations(file),
+                
+                // Get statistics
+                getStats: () => dataManager.getStatistics(),
+                
+                // Get all registrations
+                getAllRegistrations: () => dataManager.getAllRegistrations(),
+                
+                // Clear all data
+                clearAllData: () => {
+                    if (confirm('Are you sure you want to clear all registration data?')) {
+                        localStorage.removeItem(dataManager.storageKey);
+                        alert('All registration data has been cleared.');
+                    }
+                }
+            };
+
+            // Initialize page with existing data check
+            document.addEventListener('DOMContentLoaded', function() {
+                const registrations = dataManager.getAllRegistrations();
+                if (registrations.length > 0) {
+                    console.log(`Found ${registrations.length} existing registrations`);
+                    const stats = dataManager.getStatistics();
+                    console.log('Current Statistics:', stats);
+                }
+            });
+        </script>
+    </div>
+</body>
+
+</html>
